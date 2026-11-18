@@ -27,7 +27,9 @@ const start = async () => {
       await Profile.insertMany(seedProfiles);
       console.log(`Seeded ${seedProfiles.length} mock profiles.`);
     }
-    app.listen(PORT, () => console.log(`Coy Discover API running on http://localhost:${PORT}`));
+    app.listen(PORT, "0.0.0.0", () =>
+  console.log(`Coy Discover API running on port ${PORT}`)
+);
   } catch (error) {
     console.error("Startup failed. Check MongoDB and MONGODB_URI.", error);
     process.exit(1);
